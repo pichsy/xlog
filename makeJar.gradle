@@ -1,0 +1,25 @@
+def jarName = "${project.getName()}-${android.defaultConfig.versionName}.jar"
+
+//task to delete the old jar
+task deleteOldJar(type: Delete) {
+    delete "release/${jarName}"
+}
+
+// 生成jar包
+task buildXJar(type: Jar, dependsOn: deleteOldJar) {
+    description "Bundles compiled .class files into a JAR file for me."
+    dependsOn build
+    from 'build/tmp/kotlin-classes/release'
+    from "build/intermediates/javac/release/classes"
+    exclude '**/R.class', '**/R$*.class', '**/R.html', '**/R.*.html', '**/BuildConfig.class'
+    // 这个执行完之后会在 build/libs 下生成jar包，用这个
+}
+
+//task to export contents as jar
+task makeXJar(type: Copy, dependsOn: buildXJar) {
+    from('build/libs')
+    into('release/')
+    include("${project.getName()}.jar")
+    ///Rename the jar
+    rename("${project.getName()}.jar", jarName)
+}

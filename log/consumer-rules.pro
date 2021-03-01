@@ -1,0 +1,2 @@
+-keep class com.baidu.mobads.** { *; }
+-keep class com.baidu.mobad.** { *; }

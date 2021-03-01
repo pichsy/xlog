@@ -1,0 +1,21 @@
+project.apply from: rootProject.file('kotlin.gradle')
+project.apply plugin: 'com.alibaba.arouter'
+project.android {
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()/*, AROUTER_GENERATE_DOC: "enable"*/]
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.targetCompatibility
+        targetCompatibility rootProject.ext.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = rootProject.ext.jvmTarget
+    }
+}
+project.dependencies.add('api', "com.alibaba:arouter-api:1.5.1")
+project.dependencies.add('kapt', "com.alibaba:arouter-compiler:1.5.1")
+

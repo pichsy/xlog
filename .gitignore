@@ -10,6 +10,7 @@
 # Java class files
 *.class
 
+
 # Generated files
 bin/
 gen/
@@ -83,3 +84,4 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+.idea/*
