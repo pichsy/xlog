@@ -2,18 +2,9 @@
 buildscript {
     ext.kotlin_version = "1.4.10"
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
         maven { url 'https://jitpack.io' }
         google()
         jcenter()
-        flatDir {
-            dirs 'libs'
-        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.2"
@@ -24,19 +15,10 @@ buildscript {
 
 allprojects {
     repositories {
-//        maven { url 'http://localhost:8091/artifactory/zoneyet' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
         maven { url 'https://jitpack.io' }
         google()
         jcenter()
-        flatDir {
-            dirs project(':app').file('libs')
-        }
+
     }
 }
 

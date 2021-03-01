@@ -4,7 +4,6 @@ plugins {
 apply from: rootProject.file('kotlin.gradle')
 
 android {
-    useLibrary 'org.apache.http.legacy'
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
@@ -14,9 +13,6 @@ android {
         applicationId "com.pichs.log"
         versionCode 1
         versionName "1.0"
-//        ndk {
-//            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
-//        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,13 +21,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug {
-            minifyEnabled false
-        }
-    }
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
     }
     compileOptions {
         sourceCompatibility rootProject.ext.targetCompatibility
