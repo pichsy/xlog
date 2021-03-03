@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.pichs.xlog.XLog
+import com.pichs.xlog.XLogKt
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     fun log(view: View) {
         XLog.v("1流动商贩拉是独立放假了")
         XLog.i("2流动商贩拉是独立放假了")
-        XLog.d("3流动商贩拉%s是独立%s放假%s了","asa","sadfasf","dsfaasd")
+        XLog.d("3流动商贩拉%s是独立%s放假%s了", "asa", "sadfasf", "dsfaasd")
         XLog.w("4流动商贩拉是独立放假了")
         XLog.e("5流动商贩拉是独立放假了")
         XLog.v(" safasf asdfasfas fdsf sa f")
@@ -25,10 +26,10 @@ class MainActivity : AppCompatActivity() {
         XLog.d(" safasf asdfasfas fdsf sa f")
         XLog.w(" safasf asdfasfas fdsf sa f")
         XLog.e(" safasf asdfasfas fdsf sa f")
+        XLogKt.d {
+             "这既是我的log"
+        }
     }
-
-
-
 
 
 }
