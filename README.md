@@ -2,10 +2,14 @@
 
 打日志，就很爽，
 
-非kotlin项目引入
+1. 非kotlin项目引入
+```
 api 'com.github.pichsy:xlog:1.0'
-kotlin项目引入
+```
+2. kotlin项目引入
+```
 api 'com.github.pichsy:xlog:1.1'
+```
 
 ```
     XLog.setLogEnable(true)
